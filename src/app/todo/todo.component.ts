@@ -11,15 +11,8 @@ import { Task } from '../todo-interface';
 })
 export class TodoComponent {
 
-  taskList: Task[] = [
-    // {
-    //   id:1,
-    //   title: `Test task`,
-    //   description: `test`,
-    //   dueDate:``,
-    //   completed: false,
-    // }
-  ];
+  taskList: Task[] = [];
+  completedTasks: Task [] = []
 
 newTask: Task = {
   id: 0, 
@@ -37,14 +30,42 @@ addTask() {
     dueDate: this.newTask.dueDate,
     completed: this.newTask.completed,
   };
-  console.log(tempTask);
-
   this.taskList.push(tempTask);
-  console.log('Updated taskList:', this.taskList);
+
+  this.newTask = {
+    id: 0,
+    title: '',
+    description: '',
+    dueDate: '',
+    completed: false,
+  };
+ 
 };
 
 deleteTask(taskId: number){
-  this.taskList = this.taskList.filter(task=> task.id !== taskId)
+  // this.taskList = this.taskList.filter(task=> task.id !== taskId)
+  const taskIndex = this.taskList.findIndex(task => task.id === taskId);
+
+  if (taskIndex !== -1) {
+    const [completedTask] = this.taskList.splice(taskIndex, 1); // Remove from active tasks
+    completedTask.completed = true; // Mark as completed
+    this.completedTasks.push(completedTask); // Add to completed tasks
+  };
+
 };
+
+undoDeleteTask(taskId: number) {
+  const taskIndex = this.completedTasks.findIndex(task => task.id === taskId);
+
+  if (taskIndex !== -1) {
+    const [taskToRestore] = this.completedTasks.splice(taskIndex, 1);
+    taskToRestore.completed = false;
+    this.taskList.push(taskToRestore);
+  }
+}
+
+permDelete(taskId: number) {
+  this.taskList = this.taskList.filter(task=> task.id !== taskId)
+}
 
 }
