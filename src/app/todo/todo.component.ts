@@ -43,4 +43,8 @@ addTask() {
   console.log('Updated taskList:', this.taskList);
 };
 
+deleteTask(taskId: number){
+  this.taskList = this.taskList.filter(task=> task.id !== taskId)
+};
+
 }
