@@ -1,26 +1,44 @@
 <div class="container-lg">
-    <h3 class="fw-bolder mt-2 text-center">To-do List</h3>
-    <ul class="list-group my-3">
-        <li class="list-group-item disabled" aria-disabled="true">A disabled item</li>
-        <li class="list-group-item">A second item</li>
-        <li class="list-group-item">A third item</li>
-        <li class="list-group-item">A fourth item</li>
-        <li class="list-group-item">And a fifth one</li>
-    </ul>
+    <div class="card  px-2">
+        <h3 class="fw-bolder mt-2 text-center">To-do List</h3>
+        <div *ngIf="taskList.length === 0" class="text-center py-4">
+            <i class="bi bi-clipboard-x fs-1 text-muted"></i>
+            <p class="mt-2 text-muted">
+                No tasks available. Add a new task to get started!
+            </p>
+        </div>
 
-
-    <div class="mb-3">
-        <label for="taskTitle" class="form-label">Title:</label>
-        <input type="text" class="form-control" id="taskTitle" placeholder="Enter the title of your task..." required>
+        
+        <ul class="list-group my-3">
+            <li class="list-group-item d-flex align-items-center" *ngFor="let task of taskList">
+                <div style="width: 25%;">{{task.title}}</div>
+                <div style="width: 65%;">{{task.description}}</div>
+                <div class="text-end" style="width: 10%;">{{task.dueDate}}</div>
+            </li>
+            
+        </ul>
     </div>
-    <div class="mb-3">
-        <label for="taskDescription" class="form-label">Description:</label>
-        <textarea class="form-control" id="taskDescription" rows="3"
-            placeholder="Describe your task in more detail if needed..."></textarea>
+    <div class="card mt-3 pb-3 px-2">
+        <form (ngSubmit)="addTask()">
+        <div class="mb-3">
+            <h3 class="fw-bolder mt-2 text-center">Enter your Tasks Here</h3>
+            
+            <label for="taskTitle" class="form-label">Title:</label>
+            <input type="text" class="form-control" id="taskTitle" placeholder="Enter the title of your task..."
+               [(ngModel)]="newTask.title" name="taskTitle" required>
+        </div>
+        <div class="mb-3">
+            <label for="taskDescription" class="form-label">Description (Optional):</label>
+            <textarea class="form-control" id="taskDescription" rows="3"
+                placeholder="Describe your task in more detail if needed..." [(ngModel)]="newTask.description" name="taskDescription"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="dueDate" class="form-label">Due Date (Optional):</label>
+            <input type="date" class="form-control" style="width: 15%;" id="dueDate" [(ngModel)]="newTask.dueDate" name="dueDate">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Task</button>
+    </form>
     </div>
-    <div class="mb-3">
-        <label for="dueDate" class="form-label">Due Date:</label>
-        <input type="date" class="form-control" style="width: 15%;" id="dueDate">
-    </div>
-    <button type="submit" class="btn btn-primary">Submit Task</button>
 </div>
+
+

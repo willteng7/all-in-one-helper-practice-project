@@ -1,7 +1,9 @@
 <section class="text-center">
     <div class="container-lg">
+
         <div class="row">
             <div class="col-12 col-md-5 my-auto pb-1">
+                
                 <h3 class="fw-bolder mb-4">Welcome to Your Daily Helper!</h3>
                 <p class="fst-italic fw-semibold text-center">Ever forget to do that one thing on your to-do list? <br>
                     Or struggle to decide where to eat, what to
@@ -16,6 +18,7 @@
                 </p>
                 <button class="btn btn-primary btn-lg mb-3" data-bs-toggle="modal" data-bs-target="#login">Login
                     Now!</button>
+                
                 <div class="modal fade" id="login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -53,39 +56,43 @@
             </div>
 
         </div>
+
         <hr class="mt-5">
     </div>
 </section>
 <section class="container-lg">
     <div class="d-flex justify-content-evenly flex-wrap gap-5 text-center mb-3">
-    <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">To-do List</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-            <a href="#" class="btn btn-primary">To-do List</a>
+        <div class="card shadow-lg" style="width: 18rem;">
+            <img src="asset/todo banner.png" class="card-img-top" alt="todo-banner">
+            <div class="card-body">
+                <h5 class="card-title">To-do List</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                <a routerLink="/todo" class="btn btn-primary">To-do List</a>
+            </div>
         </div>
-    </div>
 
-    <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Decision Maker</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-            <a href="#" class="btn btn-primary">Decision Maker</a>
+        <div class="card shadow-lg" style="width: 18rem;">
+            <img src="asset/decison.png" class="card-img-top" alt="decision maker banner">
+            <div class="card-body">
+                <h5 class="card-title">Decision Maker</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                <a routerLink="/decision" class="btn btn-primary">Decision Maker</a>
+            </div>
         </div>
-    </div>
 
-    <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Budget App</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-            <a href="#" class="btn btn-primary">Budget App</a>
+        <div class="card shadow-lg" style="width: 18rem;">
+            <img src="asset/budgetbanner.png" class="card-img-top" alt="budget app banner">
+            <div class="card-body">
+                <h5 class="card-title">Budget App</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                <a routerLink="/budget" class="btn btn-primary">Budget App</a>
+            </div>
         </div>
     </div>
-</div>
 </section>
