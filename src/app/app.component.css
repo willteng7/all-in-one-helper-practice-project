@@ -1,9 +1,0 @@
-.nav-link:hover {
-    text-decoration: underline;
-    background-color: rgba(173, 187, 190, 0.25);
-    border-radius: 3px;
-    font-style: italic;
-    transition: all 0.5s ease;
-}
-
-
