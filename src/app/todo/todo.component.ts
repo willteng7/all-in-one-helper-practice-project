@@ -43,11 +43,12 @@ addTask() {
 };
 
 deleteTask(taskId: number){
-  // this.taskList = this.taskList.filter(task=> task.id !== taskId)
   const taskIndex = this.taskList.findIndex(task => task.id === taskId);
 
-  if (taskIndex !== -1) {
-    const [completedTask] = this.taskList.splice(taskIndex, 1); // Remove from active tasks
+  //if (taskIndex !== -1) 
+    {
+    const removedTask = this.taskList.splice(taskIndex, 1); // Remove from active tasks
+    const completedTask = removedTask[0];
     completedTask.completed = true; // Mark as completed
     this.completedTasks.push(completedTask); // Add to completed tasks
   };
