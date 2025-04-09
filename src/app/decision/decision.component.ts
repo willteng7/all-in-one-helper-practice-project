@@ -37,10 +37,11 @@ export class DecisionComponent {
     this.resultList.splice(resultIndex, 1);
   };
 
+  //Not sure how combine both delete functions since there isn't a key value I can use as an identifier, will think more on this or look this up later
+
   trackResult() {
     if (this.options.length > 0) {
       this.resultList.push(this.result)
     }
   };
-
 }
