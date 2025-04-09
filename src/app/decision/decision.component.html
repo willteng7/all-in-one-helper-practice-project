@@ -8,7 +8,6 @@
             </p>
         </div>
 
-
         <ul class="list-group my-3">
             <li class="list-group-item d-flex align-items-center" *ngFor="let option of options">
                 <div style="width: 100%;">{{option}}</div>
@@ -17,16 +16,18 @@
                 </button>
             </li>
         </ul>
+
         <form>
             <input type="text" name="options" placeholder="Enter your options here to get started..." class="form-control mb-2" [(ngModel)]="item">
             <button class="btn btn-primary mb-2" (click)="addOption()">Add</button>
         </form>
     </div>
+
     <div class="card mt-3">
         <button class="btn btn-primary" type="button" data-bs-toggle="modal"
             data-bs-target="#decisionModal" (click)="randomize();trackResult()">Generate Decision!</button>
 
-        <div class="modal fade" id="decisionModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="decisionModal" tabindex="-1" aria-labelledby="decisionModal" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -34,11 +35,12 @@
                         <h1 class="modal-title fs-5" id="exampleModalLabel" *ngIf="options.length === 0">Please add options first!</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
+
                     <div class="modal-body">
                         <span *ngIf="options.length > 0">{{result}} </span>
-                        <span *ngIf="options.length === 0">Enter a few options and I'll work my magic to help you make that tough call.</span>
-                        
+                        <span *ngIf="options.length === 0">Enter a few options and I'll work my magic to help you make that tough call.</span>    
                     </div>
+
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     </div>
@@ -46,15 +48,15 @@
             </div>
         </div>
     </div>
+
     <div class="card px-2 mt-3">
         <h3 class="fw-bolder mt-2 text-center">Result Tracker</h3>
         <div *ngIf="resultList.length === 0" class="text-center py-4">
-            
             <p class="mt-3 text-muted">
-                We will track your results here <i class="bi bi-arrow-down-circle"></i>
+                We will track your results here 
+                <i class="bi bi-arrow-down-circle"></i>
             </p>
         </div>
-
 
         <ul class="list-group list-group-flush my-3">
             <li class="list-group-item d-flex align-items-center" *ngFor="let results of resultList">
