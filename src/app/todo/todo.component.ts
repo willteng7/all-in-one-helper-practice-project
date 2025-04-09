@@ -24,24 +24,27 @@ export class TodoComponent {
   };
 
   addTask() {
+    if (this.newTask.title.trim()) {
+      const tempTask: Task = {
+        id: this.taskList.length + 1,
+        title: this.newTask.title,
+        description: this.newTask.description,
+        dueDate: this.newTask.dueDate,
+        completed: this.newTask.completed,
 
-    const tempTask: Task = {
-      id: this.taskList.length + 1,
-      title: this.newTask.title,
-      description: this.newTask.description,
-      dueDate: this.newTask.dueDate,
-      completed: this.newTask.completed,
-    };
-    this.taskList.push(tempTask);
+      };
 
-    this.newTask = {
-      id: 0,
-      title: '',
-      description: '',
-      dueDate: '',
-      completed: false,
-    };
 
+      this.taskList.push(tempTask);
+
+      this.newTask = {
+        id: 0,
+        title: '',
+        description: '',
+        dueDate: '',
+        completed: false,
+      };
+    }
   };
 
   deleteTask(taskId: number) {
@@ -70,9 +73,17 @@ export class TodoComponent {
     }
   }
 
-  permDelete(taskId: number) {
-    this.taskList = this.taskList.filter(task => task.id !== taskId)
+  permDelete(task: Task) {
+    if (task.completed === true) {
+      this.completedTasks = this.completedTasks.filter(t => t.id !== task.id)
+    }
+    else {
+      this.taskList = this.taskList.filter(t => t.id !== task.id)
+    }
   }
+
+
+
 
 }
 

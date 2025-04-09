@@ -17,7 +17,7 @@
                 <div style="width: 25%;">{{task.title}}</div>
                 <div style="width: 65%;">{{task.description}}</div>
                 <div class="text-end" style="width: 10%;">{{task.dueDate}}</div>
-                <button class="trash-btn btn btn-outline-secondary btn-sm  ms-2" (click)="permDelete(task.id)">
+                <button class="trash-btn btn btn-outline-secondary btn-sm  ms-2" (click)="permDelete(task)">
                     <i class="bi bi-trash3"></i>
                 </button>
             </li>
@@ -56,18 +56,21 @@
         <div *ngIf="completedTasks.length === 0" class="text-center py-4">
             <i class="bi bi-clipboard-check fs-1 text-muted"></i>
             <p class="mt-3 text-muted">
-                Your completed tasks will go here. You can also undo by clicking the undo icon.
+                Your completed tasks will go here. You can also return tasks to the list by by clicking the undo icon.
             </p>
         </div>
 
         <ul class="list-group my-3">
-            <li class="list-group-item d-flex align-items-center" *ngFor="let task of completedTasks">
-                <button class="complete-btn btn btn-outline-secondary btn-sm  me-2" (click)="undoDeleteTask(task.id)">
+            <li class="list-group-item d-flex align-items-center" *ngFor="let completedTask of completedTasks">
+                <button class="complete-btn btn btn-outline-secondary btn-sm  me-2" (click)="undoDeleteTask(completedTask.id)">
                     <i class="bi bi-arrow-counterclockwise"></i>
                 </button>
-                <div style="width: 25%;">{{task.title}}</div>
-                <div style="width: 65%;">{{task.description}}</div>
-                <div class="text-end" style="width: 10%;">{{task.dueDate}}</div>
+                <div style="width: 25%;">{{completedTask.title}}</div>
+                <div style="width: 65%;">{{completedTask.description}}</div>
+                <div class="text-end" style="width: 10%;">{{completedTask.dueDate}}</div>
+                <button class="trash-btn btn btn-outline-secondary btn-sm  ms-2" (click)="permDelete(completedTask)">
+                    <i class="bi bi-trash3"></i>
+                </button>
             </li>
         </ul>
     </div>

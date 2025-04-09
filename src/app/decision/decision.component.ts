@@ -15,24 +15,32 @@ export class DecisionComponent {
   resultList: string[] = []
 
   addOption() {
-    this.options.push(this.item);
-    this.item = ``
+    if (this.item.trim()) {
+      this.options.push(this.item);
+      this.item = ``
+    }
   };
 
   randomize() {
     const resultIndex = Math.floor(Math.random() * this.options.length);
     this.result = this.options[resultIndex]
+
   }
 
-  deleteItem(){
+  deleteItem() {
     const itemIndex = this.options.indexOf(this.item);
     this.options.splice(itemIndex, 1);
+  }
+
+  deleteResults() {
     const resultIndex = this.resultList.indexOf(this.result);
     this.resultList.splice(resultIndex, 1);
   }
 
-  trackResult () {
-    this.resultList.push(this.result)
+  trackResult() {
+    if (this.options.length > 0) {
+      this.resultList.push(this.result)
+    }
   }
 
 }
