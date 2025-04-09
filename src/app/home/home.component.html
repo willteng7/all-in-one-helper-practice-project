@@ -1,9 +1,8 @@
 <section class="text-center">
     <div class="container-lg">
-
         <div class="row">
             <div class="col-12 col-md-5 my-auto pb-1">
-                
+
                 <h3 class="fw-bolder mb-4">Welcome to Your Daily Helper!</h3>
                 <p class="fst-italic fw-semibold text-center">Ever forget to do that one thing on your to-do list? <br>
                     Or struggle to decide where to eat, what to
@@ -18,8 +17,8 @@
                 </p>
                 <button class="btn btn-primary btn-lg mb-3" data-bs-toggle="modal" data-bs-target="#login">Login
                     Now!</button>
-                
-                <div class="modal fade" id="login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+                <div class="modal fade" id="login" tabindex="-1" aria-labelledby="loginModal" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -27,22 +26,23 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
+
                             <div class="modal-body">
                                 <form class="text-start">
                                     <div class="mb-3">
-
-                                        <label for="exampleInputEmail1" class="form-label">Email:</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1"
+                                        <label for="inputEmail" class="form-label">Email:</label>
+                                        <input type="email" class="form-control" id="inputEmail"
                                             aria-describedby="emailHelp">
                                         <div id="emailHelp" class="form-text">We'll never share your email with anyone
                                             else.</div>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="exampleInputPassword1" class="form-label">Password:</label>
-                                        <input type="password" class="form-control" id="exampleInputPassword1">
+                                        <label for="inputPassword" class="form-label">Password:</label>
+                                        <input type="password" class="form-control" id="inputPassword">
                                     </div>
                                 </form>
                             </div>
+
                             <div class="modal-footer">
                                 <span>Incomplete, need to learn to create login</span>
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -51,7 +51,9 @@
                         </div>
                     </div>
                 </div>
+
             </div>
+
             <div class="col-12 col-md-7 mx-auto">
                 <img src="asset/main-blue-2.png" class="img-fluid rounded shadow-lg" alt="logo" />
             </div>
@@ -61,48 +63,56 @@
         <hr class="mt-5">
     </div>
 </section>
+
 <section class="container-lg">
     <div class="d-flex justify-content-evenly flex-wrap gap-5 text-center mb-3">
+
         <div class="card shadow-lg" style="width: 18rem;">
             <a routerLink="/todo"><img src="asset/todo banner.png" class="card-img-top" alt="todo-banner">
             </a>
-                <div class="card-body">
+            <div class="card-body">
                 <h5 class="card-title">To-do List</h5>
-                <p class="card-text">Tackle your tasks with ease! Our to-do list helps you stay organized, check things off, and feel like a productivity pro.</p>
+                <p class="card-text">Tackle your tasks with ease! Our to-do list helps you stay organized, check things
+                    off, and feel like a productivity pro.</p>
                 <a routerLink="/todo" class="btn btn-primary">To-do List</a>
             </div>
         </div>
 
         <div class="card shadow-lg" style="width: 18rem;">
             <a routerLink="/decision">
-            <img src="asset/decison.png" class="card-img-top" alt="decision maker banner">
-        </a>
+                <img src="asset/decison.png" class="card-img-top" alt="decision maker banner">
+            </a>
             <div class="card-body">
                 <h5 class="card-title">Decision Maker</h5>
-                <p class="card-text">Stuck in a dilemma? Let the Decision Maker take the reins and help you choose with zero stress and maximum fun!</p>
+                <p class="card-text">Stuck in a dilemma? Let the Decision Maker take the reins and help you choose with
+                    zero stress and maximum fun!</p>
                 <a routerLink="/decision" class="btn btn-primary">Decision Maker</a>
             </div>
         </div>
 
         <div class="card shadow-lg" style="width: 18rem;">
             <a routerLink="/budget">
-            <img src="asset/budgetbanner.png" class="card-img-top" alt="budget app banner">
-        </a>
+                <img src="asset/budgetbanner.png" class="card-img-top" alt="budget app banner">
+            </a>
             <div class="card-body">
                 <h5 class="card-title">Budget App</h5>
-                <p class="card-text">Take control of your cash! Our budget tracker keeps your spending in check, so you can focus on what really matters.</p>
+                <p class="card-text">Take control of your cash! Our budget tracker keeps your spending in check, so you
+                    can focus on what really matters.</p>
                 <a routerLink="/budget" class="btn btn-primary">Budget App</a>
             </div>
         </div>
+
         <div class="card shadow-lg" style="width: 18rem;">
             <a routerLink="/investment">
-            <img src="asset/investment.png" class="card-img-top" alt="inventment banner">
-        </a>
+                <img src="asset/investment.png" class="card-img-top" alt="inventment banner">
+            </a>
             <div class="card-body">
                 <h5 class="card-title">Investment Tracker</h5>
-                <p class="card-text">Watch your investments grow! Keep tabs on your portfolio with ease and make smarter moves toward your financial future.</p>
+                <p class="card-text">Watch your investments grow! Keep tabs on your portfolio with ease and make smarter
+                    moves toward your financial future.</p>
                 <a routerLink="/investment" class="btn btn-primary">Investment Tracker</a>
             </div>
         </div>
+        
     </div>
 </section>

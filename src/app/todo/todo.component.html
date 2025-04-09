@@ -24,7 +24,6 @@
         </ul>
     </div>
 
-
     <div class="card mt-3 pb-3 px-2">
         <form (ngSubmit)="addTask()">
             <div class="mb-3">
@@ -34,12 +33,14 @@
                 <input type="text" class="form-control" id="taskTitle" placeholder="Enter the title of your task..."
                     [(ngModel)]="newTask.title" name="taskTitle" required>
             </div>
+
             <div class="mb-3">
                 <label for="taskDescription" class="form-label">Description (Optional):</label>
                 <textarea class="form-control" id="taskDescription" rows="3"
                     placeholder="Describe your task in more detail if needed..." [(ngModel)]="newTask.description"
                     name="taskDescription"></textarea>
             </div>
+
             <div class="mb-3">
                 <label for="dueDate" class="form-label">Due Date (Optional):</label>
                 <input type="date" class="form-control" style="width: 15%;" id="dueDate" [(ngModel)]="newTask.dueDate"
@@ -48,7 +49,6 @@
             <button type="submit" class="btn btn-primary">Submit Task</button>
         </form>
     </div>
-
 
     <div class="card px-2 my-3">
         <h3 class="fw-bolder mt-2 text-center">Completed Tasks</h3>
@@ -73,6 +73,7 @@
                 </button>
             </li>
         </ul>
+        
     </div>
 
 </div>

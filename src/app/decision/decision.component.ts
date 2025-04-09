@@ -25,22 +25,22 @@ export class DecisionComponent {
     const resultIndex = Math.floor(Math.random() * this.options.length);
     this.result = this.options[resultIndex]
 
-  }
+  };
 
   deleteItem() {
     const itemIndex = this.options.indexOf(this.item);
     this.options.splice(itemIndex, 1);
-  }
+  };
 
   deleteResults() {
     const resultIndex = this.resultList.indexOf(this.result);
     this.resultList.splice(resultIndex, 1);
-  }
+  };
 
   trackResult() {
     if (this.options.length > 0) {
       this.resultList.push(this.result)
     }
-  }
+  };
 
 }
