@@ -47,7 +47,7 @@ export class TodoComponent {
     }
   };
 
-  deleteTask(taskId: number) {
+  completeTask(taskId: number) {
 
 
     const taskIndex = this.taskList.findIndex(task => task.id === taskId);
