@@ -37,7 +37,7 @@ export class TodoComponent {
 
       this.taskList.push(tempTask);
 
-      this.newTask = {
+      this.newTask = {      //restores the input fields to empty
         id: 0,
         title: '',
         description: '',
